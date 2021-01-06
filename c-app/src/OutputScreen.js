@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class OutputScreen extends Component {
     state = {}
     render() {
-        return (<div>Output</div>);
+        return (<div className="outp-scrn">Output</div>);
     }
 }
 
