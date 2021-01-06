@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Calculator extends Component {
     state = {  }
     render() { 
-        return ( <div>My Calculator</div> );
+        return ( <div id="calculator" style={{backgroundColor: 'blue'}}>My Calculator</div> );
     }
 }
  
