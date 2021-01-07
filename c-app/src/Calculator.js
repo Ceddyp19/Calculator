@@ -7,7 +7,6 @@ class Calculator extends Component {
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
-                My Calculator
                 <FormulaScreen />
                 <OutputScreen />
             </div>
