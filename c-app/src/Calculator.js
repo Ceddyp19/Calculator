@@ -9,16 +9,16 @@ class Calculator extends Component {
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
                 <FormulaScreen />
                 <OutputScreen />
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
-                <Calculator id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
+                <Button id='+'/>
             </div>
         );
     }
