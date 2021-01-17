@@ -25,4 +25,5 @@ class Calculator extends Component {
 }
 //Calculator is for the something, I don't know what i'm saying obviously 
 //just a little extra code for absolutely nothing but to annoy myself
+//more foolishness
 export default Calculator;
