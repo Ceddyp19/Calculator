@@ -24,6 +24,8 @@ class Calculator extends Component {
                 <Button id='subtract' text='-'/>
                 <Button id='multiply' text='*'/>
                 <Button id='divide' text='/'/>
+                <Button id='decimal' text='.'/>
+                <Button id='clear' text='clear'/>
 
             </div>
         );
