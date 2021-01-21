@@ -2,7 +2,7 @@
 function Button(props) {
 
         return (
-        <div>{props.text}</div> 
+        <div id={props.id}>{props.text}</div> 
         );
     
 }
