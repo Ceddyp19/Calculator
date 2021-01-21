@@ -9,21 +9,21 @@ class Calculator extends Component {
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
                 <FormulaScreen />
                 <OutputScreen />
-                <Button id='equals' text='='/>
-                <Button id='zero' text='0'/>
-                <Button id='one' text='1'/>
-                <Button id='two' text='2'/>
-                <Button id='three' text='3'/>
-                <Button id='four' text='4'/>
-                <Button id='five' text='5'/>
-                <Button id='six' text='6'/>
-                <Button id='seven' text='7'/>
-                <Button id='eight' text='8'/>
-                <Button id='nine' text='9'/>
-                <Button id='add' text='+'/>
-                <Button id='subtract' text='-'/>
-                <Button id='multiply' text='*'/>
-                <Button id='divide' text='/'/>
+                <Button class='number' id='equals' text='='/>
+                <Button class='number' id='zero' text='0'/>
+                <Button class='number' id='one' text='1'/>
+                <Button class='number' id='two' text='2'/>
+                <Button class='number' id='three' text='3'/>
+                <Button class='number' id='four' text='4'/>
+                <Button class='number' id='five' text='5'/>
+                <Button class='number' id='six' text='6'/>
+                <Button class='number' id='seven' text='7'/>
+                <Button class='number' id='eight' text='8'/>
+                <Button class='number' id='nine' text='9'/>
+                <Button class='arithmetic' id='add' text='+'/>
+                <Button class='arithmetic' id='subtract' text='-'/>
+                <Button class='arithmetic' id='multiply' text='*'/>
+                <Button class='arithmetic' id='divide' text='/'/>
                 <Button id='decimal' text='.'/>
                 <Button id='clear' text='clear'/>
 
