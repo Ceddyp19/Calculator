@@ -1,8 +1,10 @@
-class Button extends React.Component {
-    state = {  }
-    render() { 
-        return (  );
-    }
+
+function Button() {
+
+        return (
+        <div> 'hi'</div> 
+        );
+    
 }
  
 export default Button;
