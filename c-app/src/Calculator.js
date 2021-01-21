@@ -9,21 +9,21 @@ class Calculator extends Component {
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
                 <FormulaScreen />
                 <OutputScreen />
-                <Button id='equals'/>
-                <Button id='zero'/>
-                <Button id='one'/>
-                <Button id='two'/>
-                <Button id='three'/>
-                <Button id='four'/>
-                <Button id='five'/>
-                <Button id='six'/>
-                <Button id='seven'/>
-                <Button id='eight'/>
-                <Button id='nine'/>
-                <Button id='add'/>
-                <Button id='subtract'/>
-                <Button id='multiply'/>
-                <Button id='divide'/>
+                <Button id='equals' text=''/>
+                <Button id='zero' text=''/>
+                <Button id='one' text=''/>
+                <Button id='two' text=''/>
+                <Button id='three' text=''/>
+                <Button id='four' text=''/>
+                <Button id='five' text=''/>
+                <Button id='six' text=''/>
+                <Button id='seven' text=''/>
+                <Button id='eight' text=''/>
+                <Button id='nine' text=''/>
+                <Button id='add' text=''/>
+                <Button id='subtract' text=''/>
+                <Button id='multiply' text=''/>
+                <Button id='divide' text=''/>
 
             </div>
         );
