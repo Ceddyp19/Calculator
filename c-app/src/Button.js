@@ -1,8 +1,8 @@
 
-function Button() {
+function Button(props) {
 
         return (
-        <div>hi</div> 
+        <div>{props.text}</div> 
         );
     
 }
