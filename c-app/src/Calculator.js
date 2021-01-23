@@ -3,11 +3,11 @@ import FormulaScreen from './FormulaScreen';
 import OutputScreen from './OutputScreen';
 import Button from './Button'
 class Calculator extends Component {
-    state = {}
+    state = {displayText: 0}
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
-                <FormulaScreen />
+                <FormulaScreen displayText={this.state.displayText}/>
                 <OutputScreen />
                 <Button class='number' id='equals' text='='/>
                 <Button class='number' id='zero' text='0'/>

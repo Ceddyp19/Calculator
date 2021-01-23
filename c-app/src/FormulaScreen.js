@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
 
-class FormulaScreen extends Component {
-    state = {  }
-    render() { 
-        return ( <div className='form-scrn' style={{ backgroundColor: 'grey' }}>FormulaScreen</div> );
-    }
+function FormulaScreen() {
+
+        return ( <div className='form-scrn' style={{ backgroundColor: 'grey' }}></div> );    
 }
  
 export default FormulaScreen;
