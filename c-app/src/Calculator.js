@@ -3,17 +3,24 @@ import FormulaScreen from './FormulaScreen';
 import OutputScreen from './OutputScreen';
 import Button from './Button'
 class Calculator extends Component {
-    state = { displayText: 0 }
+    state = {
+        formulaScreenText: 5,
+        outputScreenText: 'hello'
+    }
 
     clearDisplay = () => {
-        this.setState({ displayText: 0 })
+        this.setState({
+            formulaScreenText: 0,
+            outputScreenText: '0'
+        })
+
     }
 
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
-                <FormulaScreen displayText={this.state.displayText} />
-                <OutputScreen />
+                <FormulaScreen displayText={this.state.formulaScreenText} />
+                <OutputScreen outputText={this.state.outputScreenText}/>
                 <Button class='number' id='equals' text='=' />
                 <Button class='number' id='zero' text='0' />
                 <Button class='number' id='one' text='1' />
@@ -30,7 +37,7 @@ class Calculator extends Component {
                 <Button class='arithmetic' id='multiply' text='*' />
                 <Button class='arithmetic' id='divide' text='/' />
                 <Button id='decimal' text='.' />
-                <Button id='clear' text='clear' />
+                <Button id='clear' text='clear' action={this.clearDisplay} />
 
             </div>
         );
