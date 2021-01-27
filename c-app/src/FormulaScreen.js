@@ -5,4 +5,3 @@ function FormulaScreen(props) {
 }
  
 export default FormulaScreen;
-//may decide to change this into 
