@@ -4,8 +4,8 @@ import OutputScreen from './OutputScreen';
 import Button from './Button'
 class Calculator extends Component {
     state = {
-        formulaScreenText: 5,
-        outputScreenText: 'hello'
+        formulaScreenText: 0,
+        outputScreenText: '0'
     }
 
     clearDisplay = () => {
@@ -16,15 +16,19 @@ class Calculator extends Component {
 
     }
 
+    inputNum = (num) => {
+        this.setState({formulaScreenText: num})
+    }
+
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
                 <FormulaScreen displayText={this.state.formulaScreenText} />
                 <OutputScreen outputText={this.state.outputScreenText}/>
-                <Button class='number' id='equals' text='=' />
-                <Button class='number' id='zero' text='0' />
-                <Button class='number' id='one' text='1' />
-                <Button class='number' id='two' text='2' />
+                <Button class='number' id='equals' text='=' num={1}/>
+                <Button class='number' id='zero' text='0' num={1}/>
+                <Button class='number' id='one' text='1' num={1} action={this.inputNum}/>
+                <Button class='number' id='two' text='2' num={2}/>
                 <Button class='number' id='three' text='3' />
                 <Button class='number' id='four' text='4' />
                 <Button class='number' id='five' text='5' />
