@@ -50,4 +50,3 @@ class Calculator extends Component {
 
 export default Calculator;
 
-//will i ever finish this?
