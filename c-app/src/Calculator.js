@@ -8,9 +8,7 @@ class Calculator extends Component {
         outputScreenText: '0'
     }
 
-    clearDisplay = () => {
-        console.log('hello')
-        
+    handleInput = () => {        
         this.state.formulaScreenText === '0' ? console.log('this is doing something') : console.log('it is not');
         this.setState({
             formulaScreenText: '0',
@@ -20,9 +18,13 @@ class Calculator extends Component {
     }
 
     inputNum = (num) => {
-        this.state.formulaScreenText === '0' ? console.log('this is doing something') : console.log('it is not');
-        if(this.state.formulaScreenText === 0 ) console.log('this is doing something')
-        this.setState({formulaScreenText: this.state.formulaScreenText + num})
+        //use a terary statement to remove leading zero before adding digit to the formula screen text
+        //for ex. without terary, if the 1st num a user typed is 2, '02' would have been displayed on screen 
+        this.state.formulaScreenText === '0' 
+        ? 
+        this.setState({formulaScreenText: num}) 
+        : 
+        this.setState({formulaScreenText: this.state.formulaScreenText + num});
     }
 
     render() {
@@ -46,7 +48,7 @@ class Calculator extends Component {
                 <Button class='arithmetic' id='multiply' text='*' />
                 <Button class='arithmetic' id='divide' text='/' />
                 <Button id='decimal' text='.' />
-                <Button id='clear' text='clear' action={this.clearDisplay} />
+                <Button id='clear' text='clear' handleInput={this.handleInput} />
 
             </div>
         );
