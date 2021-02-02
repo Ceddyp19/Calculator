@@ -11,7 +11,6 @@ class Calculator extends Component {
     handleInput = (input) => {
         switch (input) {
             case 'clear':
-                console.log('it should clear')
                 this.setState({ formulaScreenText: '0', outputScreenText: '0' })
                 break;
             case '=':
@@ -64,16 +63,23 @@ class Calculator extends Component {
     }
 
     mathOperator = (mathOperator) => {
-        console.log('operator!')
         let expression = this.state.formulaScreenText,
             lastInput = expression[expression.length - 1],
+            second2LastInput = expression[expression.length - 2],
+            isNotNegativeSign = /[^-]/,
             isOperator = /[+-/*]/;
-        //if the last input is an operator, we replace that operator with the current one
-        if (isOperator.test(lastInput)) {
-            expression = expression.slice(0, expression.length - 1)
+
             console.log(expression)
+        //if the last input is an operator, we replace that operator with the current one, unless it's a '-', then we append it to expression
+        if (isOperator.test(lastInput) && isNotNegativeSign.test(mathOperator)) {
+            //if second to last input is an operator as well, we remove both, otherwise, we just remove the last input
+            //ex: 5 * - + 5 should return 10, not 25 
+            console.log(second2LastInput)
+            isOperator.test(second2LastInput) || second2LastInput === ' ' ? expression = expression.slice(0, expression.length - 3) : expression = expression.slice(0, expression.length - 1)
+            // expression = expression.slice(0, expression.length - 1)
             this.setState({ formulaScreenText: expression + mathOperator })
-        } else {this.setState({ formulaScreenText: expression + mathOperator })}
+        } else if(second2LastInput !== ' -' && !isNotNegativeSign.test(mathOperator)) { this.setState({ formulaScreenText: expression + ' -' }) }
+        else if(second2LastInput !== ' -') {this.setState({ formulaScreenText: expression + mathOperator })}
     }
 
 
