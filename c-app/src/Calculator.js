@@ -12,19 +12,25 @@ class Calculator extends Component {
         switch (input) {
             case 'clear':
                 console.log('it should clear')
-                this.setState({formulaScreenText: '0', outputScreenText: '0'})
+                this.setState({ formulaScreenText: '0', outputScreenText: '0' })
                 break;
-            case '+':
-                console.log('it should add')
+            // case '+':
+            //     console.log('it should add')
+            //     break;
+            // case '-':
+            //     console.log('it should subtract')
+            //     break;
+            // case '*':
+            //     console.log('it should multiply')
+            //     break;
+            // case '/':
+            //     console.log('it should divide')
+            //     break;
+            case '=':
+                this.calculate();
                 break;
-            case '-':
-                console.log('it should subtract')
-                break;
-            case '*':
-                console.log('it should multiply')
-                break;
-            case '/':
-                console.log('it should divide')
+            case '.':
+                console.log('it should add decimal point')
                 break;
             default:
                 console.log('this is the default')
@@ -33,19 +39,30 @@ class Calculator extends Component {
                 this.state.formulaScreenText === '0' ? this.setState({ formulaScreenText: input }) : this.setState({ formulaScreenText: this.state.formulaScreenText + input });
                 break;
         }
-        // this.setState({
-        //     formulaScreenText: '0',
-        //     outputScreenText: '0'
-        // })
+    }
+
+    calculate = () => {
+        //create vars to find the last value user inputed
+      let equation = this.state.formulaScreenText,
+      lastInput = equation[equation.length - 1],
+      isNumber = /\d/;
+
+      if(isNumber.test(lastInput)) {
+        this.setState({formulaScreenText: eval(equation)})
+      }else{
+          equation = equation.slice(0, equation.length - 1)
+          this.setState({formulaScreenText: eval(equation)})
+      }
 
     }
+
 
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
                 <FormulaScreen displayText={this.state.formulaScreenText} />
-                <OutputScreen outputText={this.state.outputScreenText} />
-                <Button class='number' id='equals' text='=' />
+                <OutputScreen outputText={this.state.outputScreenText} displayText={this.state.formulaScreenText} />
+                <Button class='number' id='equals' text='=' handleInput={this.handleInput} />
                 <Button class='number' id='zero' text='0' handleInput={this.handleInput} />
                 <Button class='number' id='one' text='1' handleInput={this.handleInput} />
                 <Button class='number' id='two' text='2' handleInput={this.handleInput} />
@@ -60,7 +77,7 @@ class Calculator extends Component {
                 <Button class='arithmetic' id='subtract' text='-' handleInput={this.handleInput} />
                 <Button class='arithmetic' id='multiply' text='*' handleInput={this.handleInput} />
                 <Button class='arithmetic' id='divide' text='/' handleInput={this.handleInput} />
-                <Button id='decimal' text='.' />
+                <Button id='decimal' text='.' handleInput={this.handleInput} />
                 <Button id='clear' text='clear' handleInput={this.handleInput} />
 
             </div>
