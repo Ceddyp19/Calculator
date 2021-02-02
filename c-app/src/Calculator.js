@@ -4,19 +4,23 @@ import OutputScreen from './OutputScreen';
 import Button from './Button'
 class Calculator extends Component {
     state = {
-        formulaScreenText: '',
+        formulaScreenText: '0',
         outputScreenText: '0'
     }
 
     clearDisplay = () => {
+        console.log('hello')
+        
+        this.state.formulaScreenText === '0' ? console.log('this is doing something') : console.log('it is not');
         this.setState({
-            formulaScreenText: '',
+            formulaScreenText: '0',
             outputScreenText: '0'
         })
 
     }
 
     inputNum = (num) => {
+        if(this.state.formulaScreenText === 0 ) console.log('this is doing something')
         this.setState({formulaScreenText: this.state.formulaScreenText + num})
     }
 
