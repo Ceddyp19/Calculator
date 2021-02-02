@@ -20,6 +20,7 @@ class Calculator extends Component {
     }
 
     inputNum = (num) => {
+        this.state.formulaScreenText === '0' ? console.log('this is doing something') : console.log('it is not');
         if(this.state.formulaScreenText === 0 ) console.log('this is doing something')
         this.setState({formulaScreenText: this.state.formulaScreenText + num})
     }
