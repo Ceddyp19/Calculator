@@ -18,10 +18,9 @@ class Calculator extends Component {
                 this.calculate();
                 break;
             case '.':
-                console.log('it should add decimal point')
+                this.addDecimalPlace();
                 break;
             default:
-                console.log('this is the default')
                 //use a terary statement to remove leading zero before adding digit to the formula screen text
                 //for ex. without terary, if the 1st num a user typed is 2, '02' would have been displayed on screen 
                 this.state.formulaScreenText === '0' ? this.setState({ formulaScreenText: input }) : this.setState({ formulaScreenText: this.state.formulaScreenText + input });
@@ -30,18 +29,33 @@ class Calculator extends Component {
     }
 
     calculate = () => {
-        //create vars to find the last value user inputed
-      let expression = this.state.formulaScreenText,
-      lastInput = expression[expression.length - 1],
-      isNumber = /\d/;
+        //create vars to find the last value user inputed and check whether that value is a number
+        let expression = this.state.formulaScreenText,
+            lastInput = expression[expression.length - 1],
+            isNumber = /\d/;
+        //if that value is a number, then we go ahead and evaluate the expression, otherwise, we remove the last input before evaluating
+        if (isNumber.test(lastInput)) {
+            this.setState({ formulaScreenText: eval(expression) })
+        } else {
+            expression = expression.slice(0, expression.length - 1)
+            this.setState({ formulaScreenText: eval(expression) })
+        }
+    }
 
-      if(isNumber.test(lastInput)) {
-        this.setState({formulaScreenText: eval(expression)})
-      }else{
-          expression = expression.slice(0, expression.length - 1)
-          this.setState({formulaScreenText: eval(expression)})
-      }
+    addDecimalPlace = () => {
+        let decimalCounter = 0,
+            isMathOperator = /[+-/*]/,
+            expression = this.state.formulaScreenText;
 
+        for (let i = 0; i < expression.length; i++){
+            if(expression[i] === '.') decimalCounter ++;
+            else if(isMathOperator.test(expression[i]) && i !== 0) decimalCounter --;
+        }
+
+        if (decimalCounter <= 0) {
+            console.log('a decimal should be added')
+            this.setState({ formulaScreenText: this.state.formulaScreenText + '.' }) 
+        } else {console.log('dont add decimal')}
     }
 
 
