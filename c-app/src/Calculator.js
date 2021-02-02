@@ -14,18 +14,6 @@ class Calculator extends Component {
                 console.log('it should clear')
                 this.setState({ formulaScreenText: '0', outputScreenText: '0' })
                 break;
-            // case '+':
-            //     console.log('it should add')
-            //     break;
-            // case '-':
-            //     console.log('it should subtract')
-            //     break;
-            // case '*':
-            //     console.log('it should multiply')
-            //     break;
-            // case '/':
-            //     console.log('it should divide')
-            //     break;
             case '=':
                 this.calculate();
                 break;
