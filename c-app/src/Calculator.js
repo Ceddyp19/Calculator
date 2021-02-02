@@ -37,12 +37,6 @@ class Calculator extends Component {
 
     }
 
-    inputNum = (num) => {
-        //use a terary statement to remove leading zero before adding digit to the formula screen text
-        //for ex. without terary, if the 1st num a user typed is 2, '02' would have been displayed on screen 
-        this.state.formulaScreenText === '0' ? this.setState({ formulaScreenText: num }) : this.setState({ formulaScreenText: this.state.formulaScreenText + num });
-    }
-
     render() {
         return (
             <div id="calculator" style={{ backgroundColor: 'blue' }}>
