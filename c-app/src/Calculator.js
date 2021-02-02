@@ -43,15 +43,15 @@ class Calculator extends Component {
 
     calculate = () => {
         //create vars to find the last value user inputed
-      let equation = this.state.formulaScreenText,
-      lastInput = equation[equation.length - 1],
+      let expression = this.state.formulaScreenText,
+      lastInput = expression[expression.length - 1],
       isNumber = /\d/;
 
       if(isNumber.test(lastInput)) {
-        this.setState({formulaScreenText: eval(equation)})
+        this.setState({formulaScreenText: eval(expression)})
       }else{
-          equation = equation.slice(0, equation.length - 1)
-          this.setState({formulaScreenText: eval(equation)})
+          expression = expression.slice(0, expression.length - 1)
+          this.setState({formulaScreenText: eval(expression)})
       }
 
     }
