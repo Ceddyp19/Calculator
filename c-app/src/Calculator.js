@@ -113,3 +113,4 @@ class Calculator extends Component {
 
 export default Calculator;
 
+//coding skills need a lot of work no cap
