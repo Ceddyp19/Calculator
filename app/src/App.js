@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <Calculator />
+      <p id='credit'>Created By: Cedric Patton</p>
     </div>
   );
 }
